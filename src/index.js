@@ -6,7 +6,7 @@ var bot = LINEBot.create({
   channelSecret: process.env.CHANNEL_SECRET,
   channelToken: process.env.CHANNEL_TOKEN
 });
-bot.webhook(process.env.HEROKU_URL);
+bot.webhook('https://line-bot-simple.herokuapp.com/');
 
 
 // When we receive message
