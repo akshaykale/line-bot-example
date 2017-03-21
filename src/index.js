@@ -1,5 +1,4 @@
 
-var config = require('config');
 var LINEBot = require('line-messaging');
 
 var bot = LINEBot.create({
