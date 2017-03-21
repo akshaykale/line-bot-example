@@ -11,10 +11,6 @@ var bot = LINEBot.create({
 });
 //app.use(bot.webhook('https://line-bot-simple.herokuapp.com/'));
 
-app.post('/', function (req, res) {
-  logger.log(req.body.result);
-});
-
 // When we receive message
 bot.on(LINEBot.Events.MESSAGE, (replyToken, message) => {
     logger.log("111");
