@@ -13,11 +13,13 @@ bot.webhook('https://line-bot-simple.herokuapp.com/');
 bot.on(LINEBot.Events.MESSAGE, function(replyToken, message) {
   
     bot.replyTextMessage(replyToken, 'hello!').then(function(data) {
-        // add your code when success.
+        return "200";
     }).catch(function(error) {
-        // add your code when error.
+        return "404";
     });
-  
+    
+    return "error";
+
     }
 );
 
