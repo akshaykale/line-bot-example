@@ -1,13 +1,12 @@
 
-var config = require('config');
 var LINEBot = require('line-messaging');
 
 var bot = LINEBot.create({
-  channelID: config.get('line.channel_id'),
-  channelSecret: config.get('line.channel_secret'),
-  channelToken: config.get('line.channel_token')
+  channelID: process.env.CHANNEL_ID,
+  channelSecret: process.env.CHANNEL_SECRET,
+  channelToken: process.env.CHANNEL_TOKEN
 });
-bot.webhook(process.env.HEROKU_URL);
+bot.webhook('https://line-bot-simple.herokuapp.com/');
 
 
 // When we receive message

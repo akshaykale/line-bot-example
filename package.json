@@ -5,16 +5,16 @@
   "main": "src/index.js",
   
   "dependencies": {
-    "config": "^1.25.1",
     "line-messaging": "^1.1.8"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "src/index.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js"
   },
   "repository": { 
     "type" : "git",
-    "url" : "https://git.heroku.com/line-bot-simple.git"
+    "url" : "https://github.com/akshaykale/line-bot-example.git"
   },
   "author": "akshay kale",
   "license": "ISC"
