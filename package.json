@@ -5,7 +5,9 @@
   "main": "src/index.js",
   
   "dependencies": {
-    "line-messaging": "^1.1.8"
+    "line-messaging": "^1.1.8",
+    "winston": "^2.3.1",
+    "winston-console-formatter": "^0.3.1"
   },
   "devDependencies": {},
   "scripts": {
