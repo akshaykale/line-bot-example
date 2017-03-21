@@ -22,5 +22,5 @@ bot.on(LINEBot.Events.MESSAGE, function(replyToken, message) {
     }
 );
 
-bot.listen(8080);
-
+const port = process.env.PORT || 8080;
+bot.listen(port);
