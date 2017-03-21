@@ -3,7 +3,7 @@ var LINEBot = require('line-messaging');
 
 var bot = LINEBot.create({
   channelID: process.env.CHANNEL_ID,
-  channelSecret: process.env.CHANNELSECRET,
+  channelSecret: process.env.CHANNEL_SECRET,
   channelToken: process.env.CHANNEL_TOKEN
 });
 bot.webhook(process.env.HEROKU_URL);
