@@ -1,7 +1,7 @@
 
 var LINEBot = require('line-messaging');
 var logger = require("./logger.js");
-var app = require('express')();
+var app = require('express');
 var server = require('http').Server(app);
 
 var bot = LINEBot.create({
@@ -32,9 +32,11 @@ logger.log("444");
 
 
 if ( process.env.HEROKU_URL) {
-    const http = require("http");
+    //const http = require("http");
     const port = process.env.PORT || 8080;
-    http.createServer().listen(port, () => bot.webhook('https://line-bot-simple.herokuapp.com/'));
+    server.listen(port, ()=> app.use(bot.webhook('https://line-bot-simple.herokuapp.com/')));
+    //app.use(bot.webhook('https://line-bot-simple.herokuapp.com/'));
+    //http.createServer().listen(port, () => bot.webhook('https://line-bot-simple.herokuapp.com/'));
 } else {
     logger.log("Could not find the now.sh/Heroku environment variables. Please make sure you followed readme guide.");
  }
