@@ -1,13 +1,15 @@
 
 var LINEBot = require('line-messaging');
 var logger = require("./logger.js");
+var app = require('express')();
+var server = require('http').Server(app);
 
 var bot = LINEBot.create({
   channelID: process.env.CHANNEL_ID,
   channelSecret: process.env.CHANNEL_SECRET,
   channelToken: process.env.CHANNEL_TOKEN
-});
-bot.webhook('https://line-bot-simple.herokuapp.com/');
+}, server);
+app.use(bot.webhook('https://line-bot-simple.herokuapp.com/'));
 
 
 // When we receive message
@@ -25,5 +27,5 @@ bot.on(LINEBot.Events.MESSAGE, (replyToken, message) => {
 );
 logger.log("333");
 const port = process.env.PORT || 8080;
-bot.listen(port);
+server.listen(port);
 logger.log("444");
