@@ -1,0 +1,21 @@
+{
+  "name": "line-bot-nodejs",
+  "version": "1.0.0",
+  "description": "line  bot ",
+  "main": "src/index.js",
+  
+  "dependencies": {
+    "config": "^1.25.1",
+    "line-messaging": "^1.1.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "src/index.js"
+  },
+  "repository": { 
+    "type" : "git",
+    "url" : "https://git.heroku.com/line-bot-simple.git"
+  },
+  "author": "akshay kale",
+  "license": "ISC"
+}
