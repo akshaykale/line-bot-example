@@ -10,7 +10,7 @@ var bot = LINEBot.create({
   channelToken: process.env.CHANNEL_TOKEN
 });
 //app.use(bot.webhook('https://line-bot-simple.herokuapp.com/'));
-
+app.use(bot.webhook(process.env.HEROKU_URL));
 // When we receive message
 bot.on(LINEBot.Events.MESSAGE, (replyToken, message) => {
     logger.log("111");
@@ -31,7 +31,7 @@ logger.log("444");
 
 
 if ( process.env.HEROKU_URL) {
-    app.use(bot.webhook('https://line-bot-simple.herokuapp.com/'));
+    
     //const http = require("http");
     const port = process.env.PORT || 8080;
     server.listen(port);
