@@ -32,7 +32,7 @@ logger.log("444");
 
 if ( process.env.HEROKU_URL) {
     
-    //const http = require("http");
+    const http = require("http");
     const port = process.env.PORT || 8080;
     //server.listen(port);
     //app.use(bot.webhook('https://line-bot-simple.herokuapp.com/'));
