@@ -10,7 +10,7 @@ var bot = LINEBot.create({
   channelToken: process.env.CHANNEL_TOKEN
 });
 //app.use(bot.webhook('https://line-bot-simple.herokuapp.com/'));
-app.use(bot.webhook(process.env.HEROKU_URL));
+//bot.webhook(process.env.HEROKU_URL);
 // When we receive message
 bot.on(LINEBot.Events.MESSAGE, (replyToken, message) => {
     logger.log("111");
@@ -34,9 +34,9 @@ if ( process.env.HEROKU_URL) {
     
     //const http = require("http");
     const port = process.env.PORT || 8080;
-    server.listen(port);
+    //server.listen(port);
     //app.use(bot.webhook('https://line-bot-simple.herokuapp.com/'));
-    //http.createServer().listen(port, () => bot.webhook('https://line-bot-simple.herokuapp.com/'));
+    http.createServer().listen(port, () => bot.webhook(process.env.HEROKU_URL));
 } else {
     logger.log("Could not find the now.sh/Heroku environment variables. Please make sure you followed readme guide.");
  }
